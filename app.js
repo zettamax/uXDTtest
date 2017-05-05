@@ -8,14 +8,12 @@ window.onload = function () {
 
     document.querySelector('#play').onclick = function () {
         var button = this;
-        if (!button.disabled) {
-            osc.connect(context.destination);
-            button.disabled = true;
-            setTimeout(function () {
-                osc.disconnect(context.destination);
-                button.disabled = false;
-            }, 1000);
-        }
+        osc.connect(context.destination);
+        button.disabled = true;
+        setTimeout(function () {
+            osc.disconnect(context.destination);
+            button.disabled = false;
+        }, 1000);
     };
 
     document.querySelector('#listen').onclick = function () {
