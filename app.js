@@ -17,7 +17,22 @@ window.onload = function () {
     };
 
     document.querySelector('#listen').onclick = function () {
-        alert('Not implemented');
+        if (!navigator.getUserMedia)
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+        if (navigator.getUserMedia) {
+            navigator.getUserMedia({audio: true},
+                function (stream) {
+                    alert('OK');
+                },
+                function () {
+                    alert('Error capturing audio.');
+                }
+            );
+        } else {
+            alert('Not supported browser.');
+        }
     };
 
 };
