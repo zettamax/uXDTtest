@@ -60,7 +60,7 @@ try {
         micSource.connect(filter);
 
         analyser.fftSize = 32;
-        filter.connect(analyser);
+        micSource.connect(analyser);
 
         var WIDTH = canvas.width;
         var HEIGHT = canvas.height;
