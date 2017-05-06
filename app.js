@@ -90,7 +90,7 @@ function createFilter() {
     var filter = context.createBiquadFilter();
     filter.frequency.value = 14900;
     filter.type = 'highpass';
-    filter.Q.value = 0;
+    filter.Q.value = 1;
 
     return filter;
 }
