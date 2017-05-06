@@ -9,12 +9,25 @@ function log(message) {
 
 try {
     var context = new (window.AudioContext || window.webkitAudioContext)();
-    var osc = context.createOscillator();
-    var canvas, canvasCtx, drawVisual;
+    var freq = document.querySelector('#freq');
+    var current = document.querySelector('#current');
+    var osc, canvas, canvasCtx, drawVisual;
 
-    osc.type = 'sine';
-    osc.frequency.value = 20000;
-    osc.start();
+    function createOscillator() {
+        osc = context.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.value = freq.value;
+        osc.start();
+    }
+    createOscillator();
+
+    freq.oninput = function () {
+        current.textContent = this.value;
+    };
+
+    freq.onchange = function () {
+        createOscillator();
+    };
 
     window.onload = function () {
 

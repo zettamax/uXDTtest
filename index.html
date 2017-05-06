@@ -6,12 +6,25 @@
     <script src="app.js"></script>
     <title>Test uXDT</title>
 </head>
-<body>
+<body style="margin: 0 auto; width: 400px;">
 
     <button id="listen">Listen to beacons</button>
     <button id="play">Generate beacon</button>
 
     <br>
+
+    <input type="range" id="freq" value="10000" min="20" max="20000" step="500" style="width: 100%;">
+
+    <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <td style="width: 5ex;">20</td>
+            <td id="current" style="text-align: center"></td>
+            <td style="width: 5ex; text-align: right">20000</td>
+        </tr>
+    </table>
+
+
+    <br style="clear: both;">
 
     <canvas id="graph" width="400" height="100"></canvas>
 
