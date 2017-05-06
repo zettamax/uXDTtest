@@ -59,7 +59,7 @@ try {
 
         micSource.connect(filter);
 
-        analyser.fftSize = 32;
+        analyser.fftSize = 256;
         micSource.connect(analyser);
 
         var WIDTH = canvas.width;
