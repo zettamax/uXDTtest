@@ -12,23 +12,23 @@ var freq = document.querySelector('#freq');
 var current = document.querySelector('#current');
 var osc, canvas, canvasCtx, drawVisual;
 
-function createOscillator() {
-    osc = context.createOscillator();
-    osc.type = 'sine';
-    osc.frequency.value = freq.value;
-    osc.start();
-}
-createOscillator();
-
-freq.oninput = function () {
-    current.textContent = this.value;
-};
-
-freq.onchange = function () {
-    createOscillator();
-};
-
 window.onload = function () {
+
+    function createOscillator() {
+        osc = context.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.value = freq.value;
+        osc.start();
+    }
+    createOscillator();
+
+    freq.oninput = function () {
+        current.textContent = this.value;
+    };
+
+    freq.onchange = function () {
+        createOscillator();
+    };
 
     canvas = document.querySelector('#graph');
     canvasCtx = canvas.getContext("2d");
