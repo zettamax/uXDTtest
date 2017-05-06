@@ -15,6 +15,8 @@ window.onload = function () {
     var freq = document.querySelector('#freq');
     var current = document.querySelector('#current');
 
+    current.textContent = freq.value;
+
     function createOscillator() {
         osc = context.createOscillator();
         osc.type = 'sine';
