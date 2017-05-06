@@ -49,7 +49,7 @@ function analyzeStream(stream) {
 
     micSource.connect(filter);
 
-    analyser.fftSize = 5;
+    analyser.fftSize = 32;
     micSource.connect(analyser);
 
     var WIDTH = canvas.width;
