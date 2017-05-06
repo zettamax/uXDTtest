@@ -1,14 +1,15 @@
 var context = new window.AudioContext();
 var osc = context.createOscillator();
-var canvas = document.querySelector('#graph');
-var canvasCtx = canvas.getContext("2d");
-var drawVisual;
+var canvas, canvasCtx, drawVisual;
 
 osc.type = 'sine';
 osc.frequency.value = 15000;
 osc.start();
 
 window.onload = function () {
+
+    canvas = document.querySelector('#graph');
+    canvasCtx = canvas.getContext("2d");
 
     document.querySelector('#play').onclick = function () {
         var button = this;
