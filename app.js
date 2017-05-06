@@ -1,3 +1,12 @@
+window.onerror = function (message, file, line, col, e) {
+    log(e.message);
+    return false;
+};
+
+function log(message) {
+    document.querySelector('#log').value = message;
+}
+
 try {
     var context = new (window.AudioContext || window.webkitAudioContext)();
     var osc = context.createOscillator();
@@ -96,5 +105,5 @@ try {
         return filter;
     }
 } catch (e) {
-    document.querySelector('#log').value = e.message;
+    log(e.message);
 }
