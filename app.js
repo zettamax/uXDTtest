@@ -87,7 +87,7 @@ function analyzeStream(stream) {
 }
 
 function createFilter() {
-    var filter = audioContext.createBiquadFilter();
+    var filter = context.createBiquadFilter();
     filter.frequency.value = 14900;
     filter.type = 'highpass';
     filter.Q.value = 0;
