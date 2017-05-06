@@ -1,5 +1,5 @@
 try {
-    var context = new window.AudioContext();
+    var context = new (window.AudioContext || window.webkitAudioContext)();
     var osc = context.createOscillator();
     var canvas, canvasCtx, drawVisual;
 
