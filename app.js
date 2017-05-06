@@ -13,7 +13,7 @@ try {
     var canvas, canvasCtx, drawVisual;
 
     osc.type = 'sine';
-    osc.frequency.value = 15000;
+    osc.frequency.value = 20000;
     osc.start();
 
     window.onload = function () {
