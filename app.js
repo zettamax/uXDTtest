@@ -65,12 +65,10 @@ function analyzeStream(stream) {
 
         analyser.getByteFrequencyData(dataArray);
 
-        console.log(dataArray);
-
         canvasCtx.fillStyle = 'rgb(0, 0, 0)';
         canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
-        var barWidth = WIDTH / bufferLength;
+        var barWidth = (WIDTH - bufferLength + 1) / bufferLength;
         var barHeight;
         var x = 0;
 
