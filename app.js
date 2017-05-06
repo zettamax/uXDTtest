@@ -8,11 +8,12 @@ function log(message) {
 }
 
 var context = new (window.AudioContext || window.webkitAudioContext)();
-var freq = document.querySelector('#freq');
-var current = document.querySelector('#current');
 var osc, canvas, canvasCtx, drawVisual;
 
 window.onload = function () {
+
+    var freq = document.querySelector('#freq');
+    var current = document.querySelector('#current');
 
     function createOscillator() {
         osc = context.createOscillator();
